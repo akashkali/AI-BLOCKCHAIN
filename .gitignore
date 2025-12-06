@@ -73,9 +73,9 @@ autoencoder_model.keras
 flask_app/models/autoencoder_model.keras
 
 # Keep these model files (they're needed)
-# !flask_app/models/*.pkl
-# !isolation_forest_model.pkl
-# !scaler.pkl
+!flask_app/models/*.pkl
+!isolation_forest_model.pkl
+!scaler.pkl
 
 # Data files (large CSV files)
 *.csv
