@@ -4,8 +4,8 @@ Flask-Cors==3.0.10
 flask-socketio==5.3.6
 python-socketio==5.8.0
 python-engineio==4.8.0
-eventlet==0.33.3          # REQUIRED FOR SOCKET.IO ON RENDER
-setuptools>=65.0.0        # Required for eventlet compatibility (provides distutils)
+gevent==24.2.1             # Compatible with Python 3.13, alternative to eventlet
+gevent-websocket==0.10.1  # WebSocket support for gevent
 
 Werkzeug==2.3.7
 PyJWT==2.8.0

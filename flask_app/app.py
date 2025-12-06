@@ -43,10 +43,11 @@ allowed_origins = os.getenv('ALLOWED_ORIGINS', '*').split(',')
 CORS(app, origins=allowed_origins)  # Enable CORS
 
 # SocketIO configuration for Render
+# Use gevent for Python 3.13 compatibility (eventlet doesn't work with Python 3.13)
 socketio = SocketIO(
     app, 
     cors_allowed_origins=allowed_origins,
-    async_mode='eventlet'  # Required for Render deployment
+    async_mode='gevent'  # Compatible with Python 3.13
 )
 
 # Set custom JSON encoder
