@@ -1,6 +1,13 @@
 import smtplib
 from email.mime.text import MIMEText
-from twilio.rest import Client
+
+# Optional Twilio import - app will work without it
+try:
+    from twilio.rest import Client
+    TWILIO_AVAILABLE = True
+except ImportError:
+    TWILIO_AVAILABLE = False
+    Client = None
 
 # Email settings (replace with your actual SMTP server and credentials)
 SMTP_SERVER = 'smtp.example.com'
@@ -27,5 +34,11 @@ def send_email(subject, body, to=ADMIN_EMAIL):
         server.sendmail(SMTP_USER, [to], msg.as_string())
 
 def send_sms(body, to=ADMIN_PHONE):
-    client = Client(TWILIO_SID, TWILIO_TOKEN)
-    client.messages.create(body=body, from_=TWILIO_FROM, to=to) 
+    if not TWILIO_AVAILABLE:
+        print(f"SMS notification (Twilio not available): {body}")
+        return
+    try:
+        client = Client(TWILIO_SID, TWILIO_TOKEN)
+        client.messages.create(body=body, from_=TWILIO_FROM, to=to)
+    except Exception as e:
+        print(f"Failed to send SMS: {e}") 
