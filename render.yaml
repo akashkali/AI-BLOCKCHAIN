@@ -2,7 +2,6 @@ services:
   - type: web
     name: iot-security-backend
     env: python
-    pythonVersion: 3.11.9
     buildCommand: cd flask_app && pip install -r requirements.txt
     startCommand: cd flask_app && gunicorn app:app --threads 4 --bind 0.0.0.0:$PORT
     rootDir: flask_app
