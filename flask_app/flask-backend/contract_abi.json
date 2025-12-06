@@ -1,0 +1,332 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "deviceId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "temperature",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "humidity",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "gasLevel",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "co2Level",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "airQuality",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "soundLevel",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "motionDetected",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "lightIntensity",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "vibrationLevel",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "deviceBattery",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "isAnomaly",
+        "type": "bool"
+      }
+    ],
+    "name": "DataStored",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "dataCounter",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "dataRecords",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "deviceId",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "temperature",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "humidity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "gasLevel",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "co2Level",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "airQuality",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "soundLevel",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "motionDetected",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lightIntensity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "vibrationLevel",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "deviceBattery",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isAnomaly",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "getData",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "deviceId",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "temperature",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "humidity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "gasLevel",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "co2Level",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "airQuality",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "soundLevel",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "motionDetected",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lightIntensity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "vibrationLevel",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "deviceBattery",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isAnomaly",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_deviceId",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_temperature",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_humidity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_gasLevel",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_co2Level",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_airQuality",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_soundLevel",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_motionDetected",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_lightIntensity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_vibrationLevel",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_deviceBattery",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "_isAnomaly",
+        "type": "bool"
+      }
+    ],
+    "name": "storeData",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

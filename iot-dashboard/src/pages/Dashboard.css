@@ -1,0 +1,79 @@
+.dashboard-container {
+    padding: 20px;
+  }
+  
+  .stat-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .stat-card .display-4 {
+    font-weight: bold;
+  }
+  
+  .chart-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    height: 100%;
+  }
+  
+  .anomaly-list {
+    padding: 0;
+  }
+  
+  .anomaly-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .anomaly-item:last-child {
+    border-bottom: none;
+  }
+  
+  .anomaly-icon {
+    font-size: 24px;
+    margin-right: 15px;
+  }
+  
+  .anomaly-details {
+    flex: 1;
+  }
+  
+  .anomaly-details h6 {
+    margin-bottom: 5px;
+  }
+  
+  .anomaly-details p {
+    margin-bottom: 0;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .anomaly-severity {
+    margin-left: 15px;
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .stat-card, .chart-card {
+      background-color: #2d3748;
+      color: white;
+    }
+    
+    .anomaly-item {
+      border-bottom-color: #4a5568;
+    }
+    
+    .anomaly-details p {
+      color: #a0aec0;
+    }
+  }

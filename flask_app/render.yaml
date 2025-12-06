@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: iot-security-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --worker-class eventlet -w 1 --bind 0.0.0.0:$PORT
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: API_KEY
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+      - key: PRIVATE_KEY
+        sync: false
+      - key: WALLET_ADDRESS
+        sync: false
+      - key: CONTRACT_ADDRESS
+        sync: false
+      - key: PORT
+        value: 10000
+
+
