@@ -83,6 +83,7 @@ const LiveTracking = () => {
     
     const interval = setInterval(fetchLogs, 2000);
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTab, anomalyType]);
 
   // Fetch stats with error handling

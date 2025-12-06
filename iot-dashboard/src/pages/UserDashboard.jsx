@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Row, Col, Alert, Spinner, Badge, Button } from 'react-bootstrap';
+import { Card, Row, Col, Alert, Spinner, Button } from 'react-bootstrap';
 import { Line } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
 import axios from '../utils/axiosInstance';
@@ -10,7 +10,6 @@ import './Dashboard.css';
 import Statistics from '../components/Dashboard/Statistics';
 import Timeline from '../components/Dashboard/Timeline';
 import LiveData from '../components/Dashboard/LiveData';
-import DeviceStatus from '../components/Dashboard/DeviceStatus';
 import AttackLogs from '../components/Dashboard/AttackLogs';
 
 Chart.register(...registerables);
@@ -78,7 +77,10 @@ const UserDashboard = () => {
 
   useEffect(() => {
     fetchDashboardData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
+  useEffect(() => {
     const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
     const socket = io(apiUrl, {
       reconnection: true,
@@ -110,7 +112,8 @@ const UserDashboard = () => {
     return () => {
       socket.disconnect();
     };
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fetchDashboardData]);
 
   const prepareChartData = () => {
     const { chartData } = dashboardData;
