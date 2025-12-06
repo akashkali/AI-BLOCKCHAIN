@@ -10,7 +10,6 @@ import './Dashboard.css';
 import Statistics from '../components/Dashboard/Statistics';
 import Timeline from '../components/Dashboard/Timeline';
 import LiveData from '../components/Dashboard/LiveData';
-import DeviceStatus from '../components/Dashboard/DeviceStatus';
 import AttackLogs from '../components/Dashboard/AttackLogs';
 
 Chart.register(...registerables);

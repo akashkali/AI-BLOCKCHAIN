@@ -28,7 +28,7 @@ const Timeline = () => {
     const [timelineData, setTimelineData] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [showAllAnomalies, setShowAllAnomalies] = useState(false);
+    // Removed unused state: showAllAnomalies, setShowAllAnomalies
     const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Card, Row, Col, Alert, Spinner, Button } from 'react-bootstrap';
 import { Line } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
@@ -31,11 +31,10 @@ const UserDashboard = () => {
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [realtimeData, setRealtimeData] = useState(null);
   const [selectedDevice, setSelectedDevice] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  const fetchDashboardData = async (forceRefresh = false) => {
+  const fetchDashboardData = useCallback(async (forceRefresh = false) => {
     try {
       setLoading(true);
       console.log('Fetching dashboard data...', forceRefresh ? '(Force refresh)' : '');
@@ -68,7 +67,7 @@ const UserDashboard = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   const handleForceRefresh = () => {
     console.log('Force refreshing dashboard data...');
@@ -96,7 +95,6 @@ const UserDashboard = () => {
     
     socket.on('new_data', (data) => {
       console.log('New data received:', data);
-      setRealtimeData(data);
       // Refresh dashboard data when new readings arrive
       fetchDashboardData();
     });
@@ -112,7 +110,6 @@ const UserDashboard = () => {
     return () => {
       socket.disconnect();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchDashboardData]);
 
   const prepareChartData = () => {
