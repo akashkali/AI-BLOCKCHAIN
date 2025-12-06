@@ -58,13 +58,17 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     fetchDashboardData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
+  useEffect(() => {
     const socket = io(API_URL);
     socket.on('new_data', () => {
       fetchDashboardData();
     });
 
     return () => socket.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [API_URL]);
 
   const prepareChartData = () => {
