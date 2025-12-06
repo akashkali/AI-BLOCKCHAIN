@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import io from 'socket.io-client';
 
 const LiveData = () => {
-    const apiUrl = process.env.REACT_APP_API_URL || 'http://127.0.0.1:5000';
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
     const [liveData, setLiveData] = useState([]);
     const [isConnected, setIsConnected] = useState(false);
     const [error, setError] = useState(null);
